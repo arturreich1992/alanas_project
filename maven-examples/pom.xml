@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--
+    These are the only properties needed by maven to compile/build a project
+    -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.arturreich.examples</groupId>
+    <artifactId>maven-examples</artifactId>
+    <version>1.0</version>
+
+
+
+    <packaging>jar</packaging>
+    <name>Learning Maven Examples</name>
+    <description>This is a project to demonstrate maven principles</description>
+    <!--
+    We can define a website can contains more information about our project
+    <url></url>
+     -->
+
+    <profiles>
+        <profile>
+            <id>production</id>
+            <build>
+                <directory>production</directory>
+            </build>
+        </profile>
+    </profiles>
+
+    <licenses>
+        <license>
+            <name>Apache License</name>
+            <comments>We can define our license here</comments>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>arturreich</name>
+        <!-- <url></url> -->
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Artur Reich</name>
+            <email>arturreich1992@gmail.com</email>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>4.0.0-M16</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.7.0</version>
+            </plugin>
+        </plugins>
+
+        <!--Directory that contains the java source files -->
+        <sourceDirectory>src/nonstandard/java</sourceDirectory>
+        <!--Define own target directory -->
+        <directory>myTarget</directory>
+    </build>
+
+    <!--
+     auto generated, defines the java version and encoding
+     -->
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.11.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
